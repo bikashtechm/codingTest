@@ -8,7 +8,6 @@ import { MustMatchValidators } from 'src/app/shared/validators/validations.valid
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { Global } from 'src/app/shared/global';
 import { Globalstatic } from 'src/app/shared/globalstatic';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,6 +18,7 @@ export class LoginComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   message = "";
+  loginStubData: any = {};
   
 
   @ViewChild('ngbTabSet', { static: true }) elngbTabSet: any;
@@ -73,11 +73,13 @@ export class LoginComponent implements OnInit {
   }
   onLoginSubmit(formData: any) {
     if (this.loginForm.valid) {
-      // this.httpClient.get('../../../../assets/stubs/login.json').subscribe(
-       this._dataService.post(Global.BASE_USER_ENDPOINT + 'UserMaster/Login/', this.loginForm.value).subscribe(
+       this.httpClient.get('../../../../assets/stubs/login.json').subscribe(
+      // this._dataService.post(Global.BASE_USER_ENDPOINT + 'UserMaster/Login/', this.loginForm.value).subscribe(
         loginData => {
-          if (loginData.isSuccess) {
-            this.authService.login(loginData.data);
+          this.loginStubData = loginData;
+          console.log(this.loginStubData);
+          if (this.loginStubData.isSuccess) {
+            this.authService.login(this.loginStubData.data);
             this.message = this.authService.getMessage();
             this._toastr.success('Login Success !!', 'Login');
             this.reset();

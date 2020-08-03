@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavService } from '../../services/nav.service';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  open = false;
+  openNav = false;
+  isOpenMobile: boolean;
 
-  constructor() { }
+  constructor(private navServices: NavService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
   }
 
+  collapseSidebar() {
+    this.open = !this.open;
+    this.navServices.collapseSidebar = !this.navServices.collapseSidebar;
+  }
+  openMobileNav() {
+    this.openNav = !this.openNav;
+  }
 }

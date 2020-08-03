@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavService, Menu } from '../../services/nav.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  menuItems: Menu[];
+  FullName = 'Bikash Shaw';
+  UserType = 'Admin';
 
-  constructor() { }
+  constructor(private navService: NavService) {
+    this.menuItems = this.navService.MenuItems;
+  }
 
-  ngOnInit(): void {
+  ngOnInit() {
+  }
+
+  toggleNavActive(item) {
+    console.log(item.active);
+    item.active  = ! item.active;
   }
 
 }
