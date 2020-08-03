@@ -1,0 +1,15 @@
+{
+    "isSuccess": true,
+    "data": {
+      "id": 98,
+      "firstName": "Bikash",
+      "lastName": "Shaw",
+      "email": "1985.bikash.shaw@gmail.com",
+      "userTypeId": 6,
+      "userType": null,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ijk4IiwibmJmIjoxNTk0MTA5OTg1LCJleHAiOjE1OTQ3MTQ3ODUsImlhdCI6MTU5NDEwOTk4NX0.Uw6ST1w8l090BFD3RypwWU8APSBm4UsPnLSV9M5mhJs"
+    },
+    "errors": [
+      
+    ]
+  }
