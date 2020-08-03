@@ -1,0 +1,12 @@
+{
+    "isSuccess": true,
+    "data": {
+      "id": 98,
+      "firstName": "Bikash",
+      "lastName": "Shaw",
+      "email": "1985.bikash.shaw@gmail.com"
+    },
+    "errors": [
+      
+    ]
+  }

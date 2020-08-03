@@ -24,11 +24,10 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",     
-              "src/assets/scss/style.scss",         
+              "src/styles.css",
+              "src/assets/scss/style.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/scss/font-awesome.scss"
-
             ],
             "scripts": []
           },
@@ -121,6 +120,10 @@
               "devServerTarget": "codingtest:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
