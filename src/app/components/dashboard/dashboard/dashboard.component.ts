@@ -10,12 +10,7 @@ import { Global } from 'src/app/shared/global';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  statusChart: string = "Order Status";
-  isShowOrderStatus: boolean = false;
-  varOrders: number;
-  varShippingAmount: number;
-  varCashonDelivery: number;
-  varCancelled: number;
+ 
   orders_status: any = {};
 
   order = [];

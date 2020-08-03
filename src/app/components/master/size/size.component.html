@@ -1,1 +1,77 @@
-<p>size works!</p>
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            <h5>Size Master</h5>
+        </div>
+        <div class="card-body tab2-card">
+            <ngb-tabset class="tab-coupon" activeId="Viewtab" #tabset="ngbTabset" (tabChange)="beforeChange($event)">
+                <ngb-tab title="Add" id="Addtab">
+                    <ng-template ngbTabContent>
+                        <form [formGroup]="sizeForm" (ngSubmit)="onSubmit(sizeForm)" class="needs-validations">
+                            <div class="form-group row">
+                                <label class="col-xl-3 col-md-4"><span>*</span>Name</label>
+                                <input type="text" class="form-control col-xl-8 col-md-7" formControlName="name" />
+                                <div class="col-xl-3 col-md-5"></div>
+                                <div class="col-xl-9 col-md-7"
+                                    *ngIf="sizeForm.controls['name'].touched  && !sizeForm.controls['name'].valid">
+                                    <span style="color: red;" *ngIf="sizeForm.controls['name'].hasError('required')">
+                                        {{validationMessages.name.required}}
+                                    </span>
+                                    <div *ngIf="formErrors.name" class="text-danger">
+                                        {{formErrors.name}}
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-primary" [disabled]="sizeForm.invalid">{{buttonText}}</button>
+                            </div>
+                        </form>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab id="Viewtab">
+                    <ng-template ngbTabTitle>View</ng-template>
+                    <ng-template ngbTabContent>
+                        <!-- Container-fluid starts-->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="custom-datatable">
+                                                <ngx-datatable class="bootstrap" [rows]="objRows" [columnMode]="'force'"
+                                                    [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'"
+                                                    [limit]="5">
+                                                    <ngx-datatable-column name="Name"></ngx-datatable-column>
+                                                    <ngx-datatable-column name="CreatedOn"></ngx-datatable-column>
+                                                    <ngx-datatable-column name="Actions" sortable="false" prop="id">
+                                                        <ng-template let-column="column" let-sort="sortFn"
+                                                            ngx-datatable-header-template>
+                                                            {{column.name}}
+                                                        </ng-template>
+
+                                                        <ng-template let-row="row" let-value="value"
+                                                            ngx-datatable-cell-template>
+                                                            <button type="button" (click)="EditRow(value)">
+                                                                <i class="fa fa-edit"></i>
+                                                            </button>
+                                                            <button type="button" (click)="DeleteRow(value)">
+                                                                <i class="fa fa-trash-o"></i>
+                                                            </button>
+                                                        </ng-template>
+                                                    </ngx-datatable-column>
+                                                </ngx-datatable>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Container-fluid Ends-->
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->
