@@ -1,0 +1,35 @@
+{
+    "isSuccess": true,
+    "data": [
+      {
+        "id": 19,
+        "name": "Small",
+        "status": "Active",
+        "createdBy": 1,
+        "modifiedBy": 1,
+        "createdOn": "02/06/2020",
+        "modifiedOn": "01/08/2020"
+      },
+      {
+        "id": 21,
+        "name": "Medium",
+        "status": "Active",
+        "createdBy": 1,
+        "modifiedBy": 1,
+        "createdOn": "04/06/2020",
+        "modifiedOn": "04/06/2020"
+      },
+      {
+        "id": 26,
+        "name": "Large",
+        "status": "Active",
+        "createdBy": 1,
+        "modifiedBy": null,
+        "createdOn": "07/07/2020",
+        "modifiedOn": null
+      }
+    ],
+    "errors": [
+      
+    ]
+  }
