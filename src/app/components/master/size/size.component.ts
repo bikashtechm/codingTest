@@ -169,7 +169,7 @@ export class SizeComponent implements OnInit, OnDestroy {
           deleteObj => {
             this.sizeStubData = deleteObj
             if (this.sizeStubData.isSuccess) {
-              this._toastr.success("Data Deleted Successfully !!", "Tag Master");
+              this._toastr.success("Data Deleted Successfully !!", "Size Master");
               this.getData();
             } else {
               this._toastr.success(this.sizeStubData.errors[0], "Size Master");
